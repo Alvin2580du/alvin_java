@@ -7,7 +7,7 @@ public class Stringinjava {
         String a = "test";
         String b = a;                //b保存了a的引用
         String c;
-        float res;
+        double res;
         //这里编译器会为我们自动创建StringBuilder对象，并调用append方法，
         //最终调用StringBuilder的toString方法返回一个新的字符串对象
         a = a + "1" + "2" + "3";    //生成了一个新的String对象赋给a
@@ -24,7 +24,7 @@ public class Stringinjava {
         System.out.println(c);
         System.out.println("==============================");
         constantdemo();
-        res = add(2, 3);
+        res = add(2.01, 3);
         System.out.println(res);
         System.out.println("==============================");
 
@@ -33,7 +33,8 @@ public class Stringinjava {
         System.out.println(100);
         System.out.println(256);
 //        array2sum();
-
+        String fs;
+        formatstate(fs="娜娜");
     }
 
     private static void constantdemo() {
@@ -46,9 +47,15 @@ public class Stringinjava {
         System.out.println(false);
     }
 
-    private static float add(float x, float y) {
-        float res;
-        res = x + y;
-        return res;
+    private static double add(double x, double y) {
+        return x+y;
+    }
+
+    private static void formatstate(String fs){
+
+        String fs_new;
+
+        fs_new = String.format("%s", fs);
+        System.out.println(fs_new);
     }
 }
